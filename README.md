@@ -35,7 +35,7 @@ This is a modern betting frontend built with **Next.js**, featuring two popular 
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/yourusername/betting-frontend.git
+git clone https://github.com/rameshrn13/betting-frontend.git
 cd betting-frontend
 
 # 2. Install dependencies
