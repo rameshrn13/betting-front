@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 86% 6%;
+    --foreground: 0 0% 98%;
+    --card: 240 86% 10%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 86% 10%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 326 100% 62%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 47 95% 58%;
+    --secondary-foreground: 240 86% 6%;
+    --accent: 187 100% 47%;
+    --accent-foreground: 240 86% 6%;
+    --muted: 240 86% 15%;
+    --muted-foreground: 240 5% 75%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 86% 15%;
+    --input: 240 86% 15%;
+    --ring: 187 100% 47%;
+    --radius: 1rem;
+  }
+  .dark {
+    --background: 0 0% 98%;
+    --foreground: 240 86% 6%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 86% 6%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 86% 6%;
+    --primary: 326 83% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 47 95% 50%;
+    --secondary-foreground: 240 86% 6%;
+    --accent: 187 78% 40%;
+    --accent-foreground: 240 86% 6%;
+    --muted: 240 5% 90%;
+    --muted-foreground: 240 5% 40%;
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 240 5% 85%;
+    --input: 240 5% 85%;
+    --ring: 187 100% 47%;
+    --radius: 1rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  .hover-card {
+    @apply transition-all duration-300 hover:scale-[1.02];
+  }
+
+  .button-effect {
+    @apply transition-all duration-300 hover:scale-[1.02] active:scale-95;
+  }
+
+  .section-title {
+    @apply text-3xl font-bold text-foreground mb-6;
+  }
+
+  .game-card {
+    @apply bg-card rounded-2xl p-6 hover-card border border-border/50;
+  }
+
+  .stat-card {
+    @apply bg-card rounded-2xl p-6 border border-border/50;
+  }
+
+  .feature-icon {
+    @apply w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4;
+  }
+
+  .nav-link {
+    @apply text-muted-foreground hover:text-foreground transition-colors;
+  }
+
+  .cta-button {
+    @apply bg-primary text-primary-foreground button-effect rounded-xl px-8 py-4 font-semibold;
+  }
+
+  .secondary-button {
+    @apply bg-secondary text-secondary-foreground button-effect rounded-xl px-6 py-3 font-medium;
+  }
+
+  .accent-button {
+    @apply bg-accent text-accent-foreground button-effect rounded-xl px-6 py-3 font-medium;
+  }
+
+  .outline-button {
+    @apply border-2 border-primary text-primary button-effect rounded-xl px-6 py-3 font-medium 
+    hover:bg-primary hover:text-primary-foreground;
+  }
+
+  .winner-card {
+    @apply flex items-center gap-4 p-4 rounded-xl bg-muted/50;
+  }
+
+  .avatar {
+    @apply w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-semibold;
+  }
+
+  .badge {
+    @apply px-2 py-1 rounded-md text-xs font-medium;
+  }
+
+  .badge-primary {
+    @apply bg-primary/10 text-primary;
+  }
+
+  .badge-secondary {
+    @apply bg-secondary/10 text-secondary;
+  }
+
+  .badge-accent {
+    @apply bg-accent/10 text-accent;
+  }
+}
+
+/* Animations */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-pulse-soft {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-muted;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary/50 rounded-full hover:bg-primary/70;
+}
